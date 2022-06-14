@@ -10,13 +10,17 @@ const precio_Producto4 = 250;
 
 
 
+
 function PedirNombre() {
-    let nombre = prompt("Vamos al super!! Ingresa tu nombre");
+    let nombre = prompt("Bienvenidos a nuestra Tienda!! Ingresa tu nombre");
     while (nombre === "" && !isNaN(nombre)) {
         nombre = ("Ingrese su nombre");
     }
+    alert("Un gusto " + nombre + " por favor ingresa seccion y productos a comprar")
 }
 PedirNombre();
+
+
 
 
 const Secciones =["Panificados", "Bebidas", "Verduleria","Pastas"];
@@ -28,19 +32,19 @@ for (let index = 0; index < 4; index++) {
 alert(Secciones.join ( "\n" ))
 
 function elegirSeccion () {
-    prompt("Elija una seccion");
-    switch (elegirSeccion) {
+    let seccion = prompt("Elija una seccion del 0 al 3");
+    switch (seccion) {
         case "0":
             alert ("Su eleccion: Panificados")
             break;
         case "1":
-            return  "Su eleccion: Verduleria"
+            alert  ("Su eleccion: Verduleria")
             break;
         case "2":
-            return  "Su eleccion: Bebidas"
+            alert("Su eleccion: Bebidas")
             break;
         case "3":
-            return " Su eleccion: Pastas"
+            alert(" Su eleccion: Pastas")
             break;
         default:
             break;
@@ -55,6 +59,7 @@ class Pedido {
         this.total = 0
     }
 }
+
 
 /*agregarProductos(Productos){ this.Productos.push(Pedido)}
 obtenerTotal() {
@@ -97,3 +102,4 @@ function descuento() {
     alert ("Te esperamos pronto!")
 }
 descuento();
+

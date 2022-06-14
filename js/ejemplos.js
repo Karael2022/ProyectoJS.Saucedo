@@ -1,5 +1,5 @@
 
-let producto;
+/*let producto;
 let Pedido;
 let Subtotal_bebidas;
 let Subtotal_Salsa;
@@ -30,7 +30,7 @@ PedirNombre();
 }
 saludar()*/
 
-const pedido = () => {
+/*const pedido = () => {
     producto = prompt("Que caja desea llevar? banana , manzana, pera?");
 
     let precio;
@@ -69,11 +69,41 @@ else {
 }*/
 
 
-let descuento20 = precio_Producto1 - (precio_Producto1 * 0,2);
+/*let descuento20 = precio_Producto1 - (precio_Producto1 * 0,2);
 let descuento30 = precio_Producto2 - (precio_Producto2 * 0,3);
 alert("Ganaste un 20% descuento en el 1er producto Total $" +descuento20);
 alert("Te haremos un 30% de descuento en el 2do producto Total $" +descuento30);
 
 let Subtotal_productos = descuento20 + descuento30 + precio_Producto3 + precio_Producto4;
 alert ("Total a pagar" + " $ "+Subtotal_productos);
-alert ("Te esperamos pronto!")
+alert ("Te esperamos pronto!")*/
+
+// Ejercicios //
+class libro{
+    constructor(titulo, autor,fecha, precio,){
+    this.titulo = titulo
+    this.autor = autor
+    this.fecha = fecha
+    this.genero = precio
+    }
+}
+libroInformacion() 
+    alert((this.titulo) + "es un libro de " + (this.autor) + "escrito en " + (this.fecha) + "cuyo valor es" + (this.genero))
+
+let libros = []
+
+while(libros.length < 3) {
+    let titulo = prompt("Introduce el libro a comprar")
+    let autor = prompt("Introduce nombre del autor")
+    let fecha = prompt("Introduce fecha de edicion")
+    let genero = prompt("Introduce precio del libro")
+
+    if (titulo != "" && autor != "" && !isNaN(fecha) && fecha.length ==4 && (genero == "aventura" || genero == "fantasia" || genero == "terror")){
+        libros.push(new libros(titulo,autor,fecha,genero))
+    }
+}
+
+const mostrarLibros = () => {
+    alert(libros)
+}
+mostrarLibros();
