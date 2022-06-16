@@ -79,7 +79,7 @@ alert ("Total a pagar" + " $ "+Subtotal_productos);
 alert ("Te esperamos pronto!")*/
 
 // Ejercicios //
-class libro{
+/*class libro{
     constructor(titulo, autor,fecha, precio,){
     this.titulo = titulo
     this.autor = autor
@@ -106,4 +106,25 @@ while(libros.length < 3) {
 const mostrarLibros = () => {
     alert(libros)
 }
-mostrarLibros();
+mostrarLibros();*/
+
+let pedido = ""
+const ProdVerduleria = [];
+const ProdPanificados = [];
+const ProdPastas = [];
+const ProdBebidas = [];
+
+class Productos {
+    constructor(nombre, precio,seccion){
+        this.nombre = nombre;
+        this.precio = precio;
+        this.seccion = seccion;
+    }
+}
+class Pedido {
+    constructor(){
+    this.producto = []
+    this.nombre = ""
+    this.total = 0
+    }
+}
