@@ -1,7 +1,7 @@
-let precio_Producto1 = 120;
+/*let precio_Producto1 = 120;
 let precio_Producto2 = 110;
 let precio_Producto3 = 150;
-let precio_Producto4 = 290;
+let precio_Producto4 = 300;
 
 let Productos = []
 
@@ -67,7 +67,7 @@ array.push(DetalledePedido4);
 const pedido1 = new Pedido(cliente, array);
 const pedido2 = new Pedido(cliente, array);
 const pedido3 = new Pedido(cliente, array);
-const pedido4 = new Pedido(cliente, array);*/
+const pedido4 = new Pedido(cliente, array);
 
 
 function PedirNombre() {
@@ -132,7 +132,7 @@ suma();
 
 
 
-function descuento() {
+/*function descuento() {
     let descuento20 = precio_Producto1 - (precio_Producto1 * 0,2);
     let descuento30 = precio_Producto2 - (precio_Producto2 * 0,3);
     let Subtotal_productos = descuento20 + descuento30 + precio_Producto3 + precio_Producto4;
@@ -141,5 +141,5 @@ function descuento() {
     alert ("Total a pagar" + " $ "+Subtotal_productos);
     alert ("Te esperamos pronto!")
 }
-descuento();
+descuento();*/
 

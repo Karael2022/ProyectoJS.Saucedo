@@ -2,3 +2,16 @@ h1 {
     font-size: larger;
     color: blue;
 }
+h4 {
+    color: blueviolet;
+}
+p {
+    padding-left: 0%;
+    padding-right: 0%;
+}
+div {
+    color: blue ;
+}
+.pj__img{
+    width: 80px;
+}
