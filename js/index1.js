@@ -70,16 +70,32 @@ const pjs = [
     nombre:"Xiaomi Band 6", 
     precio: 5.000,
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/174852-800-auto?width=800&height=auto&aspect=true",
+    button:"Comprar"
 },
 {
     id:2, 
-    nombre:"Samnsung Wach 4", 
+    nombre:"Samsung Wach 4", 
     precio: 40.000,
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
-}]/*
-                {id:3, nombre:"Colmi 1", precio:20000},
-                {id:4, nombre: "Comlmi 2", precio:15000},
-                {id:5, nombre: "Comlmi 2", precio:15000},
+},
+    {id:3,
+    nombre:"Smartwactch Garmin Rose", 
+    precio:"234.295",
+    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
+    }]
+
+    /*{
+    id:4,
+    nombre: "Smartwact Garmin Solar", 
+    precio:"234.295",
+    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214960-500-auto?v=637902012625330000&width=500&height=auto&aspect=true"
+    }]
+    /*{
+    id:5, 
+    nombre: "Comlmi 2", 
+    precio:15000,
+    imagen:"https://www.stylestore.com.ar/reloj-garmin-vivoactive-4s-100217202/p"
+    },] /*
                 {id:6, nombre: "Comlmi 2", precio:15000},
                 {id:7, nombre: "Comlmi 2", precio:15000},
                 {id:8, nombre: "Comlmi 2", precio:15000},
@@ -117,9 +133,13 @@ pjImg.setAttribute('src',p.imagen);
 pjCont.appendChild(pjTitle);
 pjCont.appendChild(pjImg);
 
+
+
 //HAGO EL APPEND DEL PERSONAJE AL CONTENEDOR
 mainCont.appendChild(pjCont);
+
 }
+
 
 
 /*const listaProductos = [id, nombre,precio]
@@ -128,9 +148,9 @@ const categoriaDeProducto = productos.find(x => {
     return x.listaDeCategorias == categoriaDeProducto
 })*/       
 
-/*productos.forEach(producto => {
-    document.body.innerHTML = "<p>nombre</p> <button>Comprar</button>"    
-});*/
+pj.forEach(pjs => {
+    document.body.innerHTML = "<p>pj.nombre</p> <button>Comprar</button>"    
+});
 
 
 

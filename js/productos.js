@@ -1,4 +1,4 @@
-const producto = [{
+const productos = [{
     id: "1",
     categoria: "Colmi",
     descripcion:"Blablabla",

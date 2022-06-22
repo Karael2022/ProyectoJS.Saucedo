@@ -12,6 +12,13 @@ p {
 div {
     color: blue ;
 }
-.pj__img{
-    width: 80px;
+
+.pj_img {
+    display:inline-flex;
+    width: 20%;
+}
+.pj_title{
+    font-size:20px;
+    color: coral;
+    text-align: center;
 }
