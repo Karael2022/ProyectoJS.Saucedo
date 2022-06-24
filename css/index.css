@@ -1,24 +1,36 @@
 h1 {
-    font-size: larger;
+    font-size: medium;
+    font-weight: 500;
     color: blue;
 }
 h4 {
-    color: blueviolet;
+    color:black;
 }
 p {
+    color: green;
     padding-left: 0%;
     padding-right: 0%;
 }
 div {
-    color: blue ;
+    color: black ;
+}
+.reloj{
+    font-size: 45px;
 }
 
-.pj_img {
-    display:inline-flex;
-    width: 20%;
+/*.pj_img {
+    display:inline;
+    width: 65%;
+    justify-items: center;
 }
 .pj_title{
-    font-size:20px;
-    color: coral;
+    font: size 25px;
+    color: black;
     text-align: center;
+}*/
+
+.card {
+    display: inline-flex;
+    justify-content: center;
+    image-rendering: 25%;
 }

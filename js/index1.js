@@ -59,37 +59,40 @@ alert("El nuevo stock es: " + producto.stock)*/
 titulo.innerText = " Los mejores productos"*/
 /*document.body.innerHTML = "<p>Producto1</p> <button>Comprar</button>" */
 
-let subtitulo = document.createElement("h4")
+/*let subtitulo = document.createElement("h4")
 subtitulo.innerText = "Bienvenidos....."
 document.body.prepend(subtitulo)
 
 /*let listaProductosMenu ="estos son nuestros Productos: "*/
 
-const pjs = [
+/*const pjs = [
     {id:1, 
     nombre:"Xiaomi Band 6", 
     precio: 5.000,
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/174852-800-auto?width=800&height=auto&aspect=true",
-    button:"Comprar"
+    button:"Comprar",
 },
 {
     id:2, 
     nombre:"Samsung Wach 4", 
     precio: 40.000,
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
+    button:"Comprar",
 },
     {id:3,
     nombre:"Smartwactch Garmin Rose", 
-    precio:"234.295",
+    precio: 234.295,
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
-    }]
-
-    /*{
+    button:"Comprar",
+}];
+/*{
     id:4,
-    nombre: "Smartwact Garmin Solar", 
-    precio:"234.295",
-    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214960-500-auto?v=637902012625330000&width=500&height=auto&aspect=true"
-    }]
+    nombre:"Smartwact Garmin Solar", 
+    precio: 234.295,
+    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214960-500-auto?v=637902012625330000&width=500&height=auto&aspect=true",
+    button:"Comprar",
+}
+]
     /*{
     id:5, 
     nombre: "Comlmi 2", 
@@ -137,8 +140,15 @@ pjCont.appendChild(pjImg);
 
 //HAGO EL APPEND DEL PERSONAJE AL CONTENEDOR
 mainCont.appendChild(pjCont);
-
 }
+
+
+
+//Formulario//
+//(# para Id - . para clases )
+const form = document.querySelector("#formulario");
+form.addEventListener("submit",() =>{
+})
 
 
 
@@ -148,9 +158,8 @@ const categoriaDeProducto = productos.find(x => {
     return x.listaDeCategorias == categoriaDeProducto
 })*/       
 
-pj.forEach(pjs => {
-    document.body.innerHTML = "<p>pj.nombre</p> <button>Comprar</button>"    
-});
+
+
 
 
 
