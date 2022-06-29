@@ -3,8 +3,12 @@ h1 {
     font-weight: 500;
     color: blue;
 }
+h2{
+    font-size: 25px;
+}
 h4 {
     color:black;
+    
 }
 p {
     color: green;
@@ -18,19 +22,36 @@ div {
     font-size: 45px;
 }
 
-/*.pj_img {
-    display:inline;
-    width: 65%;
-    justify-items: center;
+.cont {
+    display: inline-flex;
+    font-size: 20px;
+    justify-content: center;
 }
-.pj_title{
-    font: size 25px;
+.producto_img {
+    width: 65%;
+    justify-items: left;
+}
+producto_title{
+    font: size 10px;
     color: black;
     text-align: center;
-}*/
+}
 
 .card {
     display: inline-flex;
     justify-content: center;
     image-rendering: 25%;
 }
+.btnAgregar {
+    border-radius: 5px;
+    border: 50%;
+    border-color: white;
+    color: white;
+    background-color: rgb(86, 216, 184);
+}
+.carrito{
+    width: 3%;
+    
+}
+
+

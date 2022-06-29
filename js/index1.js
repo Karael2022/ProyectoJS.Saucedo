@@ -61,38 +61,39 @@ titulo.innerText = " Los mejores productos"*/
 
 /*let subtitulo = document.createElement("h4")
 subtitulo.innerText = "Bienvenidos....."
-document.body.prepend(subtitulo)
+document.body.prepend(subtitulo)*/
 
 /*let listaProductosMenu ="estos son nuestros Productos: "*/
 
-/*const pjs = [
+
+const productos = [
     {id:1, 
     nombre:"Xiaomi Band 6", 
-    precio: 5.000,
+    precio: "5.000",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/174852-800-auto?width=800&height=auto&aspect=true",
-    button:"Comprar",
+    /*button:"Comprar",*/
 },
 {
     id:2, 
-    nombre:"Samsung Wach 4", 
-    precio: 40.000,
-    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
-    button:"Comprar",
+    nombre:"Smartwatch Colmi Sky 5", 
+    precio: "14.795",
+    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214078-800-auto?width=800&height=auto&aspect=true", 
+    /*button:"Comprar",*/
 },
     {id:3,
     nombre:"Smartwactch Garmin Rose", 
-    precio: 234.295,
+    precio: "234.295",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
-    button:"Comprar",
-}];
-/*{
+    /*button:"Comprar",*/
+},
+{
     id:4,
-    nombre:"Smartwact Garmin Solar", 
-    precio: 234.295,
-    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214960-500-auto?v=637902012625330000&width=500&height=auto&aspect=true",
-    button:"Comprar",
-}
-]
+    nombre:"Smartwatch Colmi P28 Plus", 
+    precio: "15.095",
+    imagen:"https://stylewatch.vtexassets.com/arquivos/ids/209935-800-auto?width=800&height=auto&aspect=true",
+    /*button:"Comprar",*/
+},]
+
     /*{
     id:5, 
     nombre: "Comlmi 2", 
@@ -113,34 +114,116 @@ document.body.prepend(subtitulo)
                 {id:17, nombre: "Comlmi 2", precio:15000},
                 {id:18, nombre: "Comlmi 2", precio:15000}];*/
 
+
+
+
+
+let carrito;
+
+    if(JSON.parse(localStorage.getItem('carrito'))){
+    carrito = JSON.parse(localStorage.getItem('carrito'))}
+        else {
+            localStorage.setItem('carrito',JSON.stringify({}))
+            carrito = JSON.parse(localStorage.getItem('carrito'))
+            }
+                
+function desplegarProductos() {
+        for (let i = 0; i < productos.length; i++) {
+            const element = productos[i];
+            const { id, nombre, precio, imagen } = element
+            const card = `
+            <div class='producto_cont'>
+                <p>${nombre}</p>
+                <div>
+                <img class='producto_img' src=${imagen} alt=''/>
+                            </div>
+                            <div>
+                                <p class ="producto_precio">$${precio.toLocaleString()}</p>
+                            </div>
+                            <div class="btn-container">
+                                <button id=${id} class='btnAgregar'>Comprar</button>
+                            </div>
+                        </div>
+                        `
+                        const container = document.getElementById('container')
+                        container.innerHTML += card
+                    }
+                }
+                desplegarProductos()
+                
+                const btnAgregar = document.getElementsByClassName('btnAgregar')
+                
+                for (let i = 0; i < btnAgregar.length; i++) {
+                    const element = btnAgregar[i];
+                    element.addEventListener('click',agregarAlCarrito)
+                }
+                
+                function agregarAlCarrito(e) {
+                    const btn =e.target;
+                    const idBoton = btn.getElementById('id')
+                    const prodEncontrado = carrito.find(prod => prod.id == idBoton)
+                    const enCarrito = carrito.find(prod => prod.id == prodEncontrado.id)
+                    if (!carrito) {
+                        carrito.push({...prodEncontrado,cantidad: 1})
+                    } else {
+                        let carritoFiltrado = carrito.filter(prod => prod.id !=enCarrito.id)
+                        carrito = [...carritoFiltrado, { ...enCarrito, cantidad: enCarrito.cantidad +1}]
+                    }
+                    console.log(carrito)
+                    localStorage.setItem('carrito',JSON.stringify(carrito))
+                }
+                
+                const contador = document.getElementById('contadorCarrito')
+                contador.innerHTML = carrito.length
+                
 // Busco el contenedor principal
 const mainCont = document.querySelector(".cont");
 
-for (let p of pjs){
+/*for (let producto of productos){
     //Creo mi elemento div, contenedor del producto
-    const pjCont = document.createElement('div');
-    pjCont.classList.add("pj_cont");
+    const productoCont = document.createElement('div');
+    productoCont.classList.add("producto_cont");
 
 // Creo el titulo
-const pjTitle = document.createElement("h2");
-pjTitle.classList.add("pj_title");
-pjTitle.innerText = p.nombre;
+const productoTitle = document.createElement("h2");
+productoTitle.classList.add("producto_title");
+productoTitle.innerText = producto.nombre;
 
 //CREO LA IMAGEN
-const pjImg = document.createElement("img");
+const productoImg = document.createElement("img");
 //LE DOY LA CLASE Y EL LINK
-pjImg.classList.add("pj_img");
-pjImg.setAttribute('src',p.imagen);
+productoImg.classList.add("producto_img");
+productoImg.setAttribute('src',producto.imagen);
 
 // CREO EL APPEND DE LA INFO
-pjCont.appendChild(pjTitle);
-pjCont.appendChild(pjImg);
+productoCont.appendChild(productoTitle);
+productoCont.appendChild(productoImg);
+
+
+// Creo el precio
+const productoPrecio = document.createElement("h3");
+productoPrecio.classList.add("producto_precio");
+productoPrecio.innerHTML = producto.precio;
+productoPrecio.innerText = productoPrecio
 
 
 
-//HAGO EL APPEND DEL PERSONAJE AL CONTENEDOR
-mainCont.appendChild(pjCont);
+//HAGO EL APPEND DEL Producto AL CONTENEDOR
+mainCont.appendChild(productoCont);
+}*/
+
+/*for(let producto of productos){
+    mainCont.innerHTML += `
+        <div class="producto__cont">
+            <h2 class="producto_title">${producto.nombre}</h2>
+            <img class="producto_img" src="${producto.imagen}" alt="">
+            <h4 class ="producto_precio">${producto.precio}</h4>
+            <button class = "boton">Comprar</buttton>
+        </div>
+    `
 }
+
+
 
 
 
@@ -149,7 +232,7 @@ mainCont.appendChild(pjCont);
 const form = document.querySelector("#formulario");
 form.addEventListener("submit",() =>{
 })
-
+document.getElementById
 
 
 /*const listaProductos = [id, nombre,precio]
@@ -158,7 +241,10 @@ const categoriaDeProducto = productos.find(x => {
     return x.listaDeCategorias == categoriaDeProducto
 })*/       
 
-
+let div = document.getElementById("app");
+let parrafo = document.getElementById("parrafo");
+console.log(div.innerHTML);
+console.log(parrafo,innerHTML);
 
 
 
@@ -167,7 +253,7 @@ const categoriaDeProducto = productos.find(x => {
 /*let card;
 
 for (let index = 0; index < productos.length; index++) {
-    card = '<p>Producto1</p>'+' <button>Comprar</button>';
+    card = '<p>Producto1</p>'+' <button>Compral</button>';
 }
 document.body.innerHTML = card
 
@@ -199,11 +285,13 @@ MostrarProducto();*/
 //2da forma de hacerlo//                
 /*for (const producto of productos){
     let contenedor = document.createElement("div");
-    contenedor.innerHTML = <h3>" id: ${producto.id}</h3>"
-                        <p>"  ${producto.nombre}</p>"
-                        <b>"$${producto.precio}</b>";
+    contenedor.innerHTML = `<h3> id: ${producto.id}</h3>
+                        <p> ${producto.nombre}</p>
+                        <b>$${producto.precio}</b>
+                        <button>"Comprar"</button>;`
+
 document.body.appendChild(contenedor);
-}*/
+}
 
 
 
@@ -220,9 +308,7 @@ document.body.appendChild(contenedor);
 
 
 
-
-
-
+``
 
 
 
