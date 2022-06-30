@@ -71,27 +71,27 @@ const productos = [
     nombre:"Xiaomi Band 6", 
     precio: "5.000",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/174852-800-auto?width=800&height=auto&aspect=true",
-    /*button:"Comprar",*/
+    
 },
 {
     id:2, 
     nombre:"Smartwatch Colmi Sky 5", 
     precio: "14.795",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214078-800-auto?width=800&height=auto&aspect=true", 
-    /*button:"Comprar",*/
+    
 },
     {id:3,
     nombre:"Smartwactch Garmin Rose", 
     precio: "234.295",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/214962-800-auto?width=800&height=auto&aspect=true", 
-    /*button:"Comprar",*/
+    
 },
 {
     id:4,
     nombre:"Smartwatch Colmi P28 Plus", 
     precio: "15.095",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/209935-800-auto?width=800&height=auto&aspect=true",
-    /*button:"Comprar",*/
+    
 },]
 
     /*{
@@ -117,7 +117,7 @@ const productos = [
 
 
 
-
+let Productos;
 let carrito;
 
     if(JSON.parse(localStorage.getItem('carrito'))){
@@ -135,14 +135,14 @@ function desplegarProductos() {
             <div class='producto_cont'>
                 <p>${nombre}</p>
                 <div>
-                <img class='producto_img' src=${imagen} alt=''/>
-                            </div>
-                            <div>
-                                <p class ="producto_precio">$${precio.toLocaleString()}</p>
-                            </div>
-                            <div class="btn-container">
-                                <button id=${id} class='btnAgregar'>Comprar</button>
-                            </div>
+                    <img class='producto_img' src=${imagen} alt=''/>
+                    </div>
+                <div>
+                    <p class ="producto_precio">$${precio.toLocaleString()}</p>
+                    </div>
+                <div class="btn-container">
+                    <button id=${id} class='btnAgregar'>Comprar</button>
+                    </div>
                         </div>
                         `
                         const container = document.getElementById('container')
@@ -159,23 +159,70 @@ function desplegarProductos() {
                 }
                 
                 function agregarAlCarrito(e) {
-                    const btn =e.target;
-                    const idBoton = btn.getElementById('id')
-                    const prodEncontrado = carrito.find(prod => prod.id == idBoton)
+                    const btn = e.target;
+                    console.log(btn) 
+                
+                const idBoton = btn.getAttribute('id')
+                    const prodEncontrado = productos.find(prod => prod.id == idBoton)
                     const enCarrito = carrito.find(prod => prod.id == prodEncontrado.id)
-                    if (!carrito) {
-                        carrito.push({...prodEncontrado,cantidad: 1})
+                    if(!enCarrito) {
+                        carrito.push({...prodEncontrado, cantidad: 1})
                     } else {
-                        let carritoFiltrado = carrito.filter(prod => prod.id !=enCarrito.id)
-                        carrito = [...carritoFiltrado, { ...enCarrito, cantidad: enCarrito.cantidad +1}]
+                        let carritoFiltrado = carrito.filter(prod => prod.id != enCarrito.id)
+                        carrito = [...carritoFiltrado, {...enCarrito, cantidad: enCarrito.cantidad + 1}]
                     }
                     console.log(carrito)
-                    localStorage.setItem('carrito',JSON.stringify(carrito))
+                    localStorage.setItem('carrito', JSON.stringify(carrito))
                 }
                 
-                const contador = document.getElementById('contadorCarrito')
+                const contador = document.getElementById('carCounter')
                 contador.innerHTML = carrito.length
                 
+                
+                
+                
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Busco el contenedor principal
 const mainCont = document.querySelector(".cont");
 
@@ -241,10 +288,10 @@ const categoriaDeProducto = productos.find(x => {
     return x.listaDeCategorias == categoriaDeProducto
 })*/       
 
-let div = document.getElementById("app");
+/*let div = document.getElementById("app");
 let parrafo = document.getElementById("parrafo");
 console.log(div.innerHTML);
-console.log(parrafo,innerHTML);
+console.log(parrafo,innerHTML);*/
 
 
 
@@ -296,20 +343,7 @@ document.body.appendChild(contenedor);
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-``
-
+//primeros desafios
 
 
 
