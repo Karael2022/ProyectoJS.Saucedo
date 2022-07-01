@@ -1,5 +1,4 @@
 
-let carrito;
 if(JSON.parse(localStorage.getItem('carrito')))  {
     carrito = JSON.parse(localStorage.getItem('carrito'))
 } else {
@@ -61,7 +60,7 @@ body.innerHTML += texto;
                 const cart = `
                 <tr id=${id}>
                     <th><img class='trash' src='./multimedia/trash.png' alt='foto de borrar'></th>
-                    <th class='detallesTabla'><img class='producto_imagen' src=${img} alt='foto del producto'><span class='nombreProd'>${nombre}</span></th>
+                    <th class='detallesTabla'><img class='imgProdCart' src=${img} alt='foto del producto'><span class='nombreProd'>${nombre}</span></th>
                     <th>${cantidad}</th>
                     <th>$${(cantidad * precio).toLocaleString()}</th>
                 </tr>`
