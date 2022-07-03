@@ -58,4 +58,6 @@ function agregarAlCarrito(e) {
 
 
 const contador = document.getElementById('cartCounter')
-contador.innerHTML = carrito.length        
+contador.innerHTML = carrito.length   
+
+

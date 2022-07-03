@@ -3,7 +3,7 @@
 const productos = [
     {id:1, 
     nombre:"Xiaomi Band 6", 
-    precio: "5.000",
+    precio: "5.123",
     imagen:"https://stylewatch.vtexassets.com/arquivos/ids/174852-800-auto?width=800&height=auto&aspect=true",
     
 },

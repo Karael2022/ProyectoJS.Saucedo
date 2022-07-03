@@ -1,7 +1,9 @@
 h1 {
     font-size: medium;
     font-weight: 500;
-    color: blue;
+    color: black;
+    font-family: 'Playfair Display SC', serif;;
+    margin-top: 15px;
 }
 h2{
     font-size: 25px;

@@ -1,3 +1,4 @@
+let carrito;
 
 if(JSON.parse(localStorage.getItem('carrito')))  {
     carrito = JSON.parse(localStorage.getItem('carrito'))
@@ -59,11 +60,22 @@ body.innerHTML += texto;
                 const { id, nombre, img, precio, cantidad } = element;
                 const cart = `
                 <tr id=${id}>
-                    <th><img class='trash' src='./multimedia/trash.png' alt='foto de borrar'></th>
+                    <th><img class='trash mx-3' src='/Imagenes/Xiaomi/trash.png' alt='foto de borrar'></th>
                     <th class='detallesTabla'><img class='imgProdCart' src=${img} alt='foto del producto'><span class='nombreProd'>${nombre}</span></th>
-                    <th>${cantidad}</th>
+                    <th class="cantidad px-5">${cantidad}</th>
                     <th>$${(cantidad * precio).toLocaleString()}</th>
+                    
                 </tr>`
                 tbody.innerHTML += cart
             }
 }
+
+let vaciarCarrito = document.createElement("button")
+    vaciarCarrito.innerHTML=("Desechar todo")
+    vaciarCarrito.setAttribute("class","Borrar")
+    /*dispatchEvent.append(vaciarCarrito)
+
+vaciarCarrito.onclick=() =>{
+    dispatchEvent.innerHTML=''
+    console.log(carrito)
+}*/
