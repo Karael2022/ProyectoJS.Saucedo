@@ -180,7 +180,7 @@ const contador = document.getElementById('cartCounter')
 contador.innerHTML = carrito.length        
 
 
-if(JSON.parse(localStorage.getItem('carrito')))  {
+/*if(JSON.parse(localStorage.getItem('carrito')))  {
     carrito = JSON.parse(localStorage.getItem('carrito'))
 } else {
     localStorage.setItem('carrito', JSON.stringify([]))

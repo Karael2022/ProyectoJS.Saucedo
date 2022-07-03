@@ -69,13 +69,3 @@ body.innerHTML += texto;
                 tbody.innerHTML += cart
             }
 }
-
-/*let vaciarCarrito = document.createElement("button")
-    vaciarCarrito.innerHTML=("Desechar todo")
-    vaciarCarrito.setAttribute("class","Borrar")
-    /*dispatchEvent.append(vaciarCarrito)
-
-vaciarCarrito.onclick=() =>{
-    dispatchEvent.innerHTML=''
-    console.log(carrito)
-}*/
