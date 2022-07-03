@@ -1,9 +1,8 @@
 h1 {
     font-size: medium;
     font-weight: 500;
-    color: black;
+    color: white;
     font-family: 'Playfair Display SC', serif;;
-    margin-top: 15px;
 }
 h2{
     font-size: 25px;
@@ -68,3 +67,15 @@ producto_title{
     text-align: center;
 }
 
+.titulo{
+    color: #326789;
+    width: 100vw;
+    text-align: center;
+    padding: 30px;
+    font-size: 30px;
+}
+
+header {
+    background-color: #5789a8;
+    
+}
